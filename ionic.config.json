@@ -1,0 +1,7 @@
+{
+  "name": "PruebaMarceloDurazno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
