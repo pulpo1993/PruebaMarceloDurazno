@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>peliculas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Gestion peliculas</h3>
+
+    <ion-item>
+      <ion-label position="floating">Nombre Pelicula</ion-label>
+      <ion-input [(ngModel)]="pelicula.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-input [(ngModel)]="pelicula.categoria"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Duraxion</ion-label>
+      <ion-input [(ngModel)]="pelicula.duracion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Año</ion-label>
+      <ion-input [(ngModel)]="pelicula.anio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input [(ngModel)]="pelicula.precio"></ion-input>
+    </ion-item>
+  
+
+
+    <app-take-photo source="photo"  (imageSelected)="imageSeleccionada($event)" 
+      (uploadFinished)="uploadFinished($event)"></app-take-photo>
+
+
+    <ion-card>
+      <ion-img [src]="imgData"></ion-img>
+      <ion-img [src]="message.image?.url"></ion-img>
+      {{message.image | json}}
+    </ion-card>
+    
+
+    <ion-item>
+      <ion-button color="dark" (click)="guardar()">Enviar</ion-button>
+    </ion-item>
+    
+</ion-content>
